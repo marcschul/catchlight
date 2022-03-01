@@ -9,9 +9,18 @@ Reactjs App for connecting with friends to rate, review, and chat about media. B
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Screenshots
+## Desktop
 
-### Desktop View
-!["Screenshot of Home Page page"]()
-!["Screenshot of  Show Media page"]()
-!["Screenshot of Login page"]()
+### Home
+!["Screenshot of Home Page page"](https://github.com/marcschul/catchlight/blob/master/docs/homePage-720.png?raw=true)
+### Show Media
+!["Screenshot of Show Media page"](https://github.com/marcschul/catchlight/blob/master/docs/showMedia-720.png?raw=true)
+### Login
+!["Screenshot of Login page"](https://github.com/marcschul/catchlight/blob/master/docs/login-720.png?raw=true)
+
+## Mobile
+!["Screenshot of Home Page page"](https://github.com/marcschul/catchlight/blob/master/docs/homePage-mobile.png?raw=true)
+### Show Media
+!["Screenshot of Show Media page"](https://github.com/marcschul/catchlight/blob/master/docs/showMedia-mobile.png?raw=true)
+### Login
+!["Screenshot of Login page"](https://github.com/marcschul/catchlight/blob/master/docs/login-mobile.png?raw=true)
