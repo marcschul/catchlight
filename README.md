@@ -2,7 +2,7 @@
 
 ## Description
 
-Reactjs App for connecting with friends to rate, review, and chat about media. Built \w PERN stack.
+Reactjs App allowing uses to connect with friends to rate, review and chat about media. Built \w PERN stack.
 
 ### `npm start`
 
