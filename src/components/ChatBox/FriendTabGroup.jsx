@@ -6,17 +6,16 @@ export default function FriendTabGroup(props) {
   const [friends, setFriends] = useState({});
   const { activeFriend, activeFriendClick } = props;
 
-  const jwt = {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-    },
-  };
   useEffect(() => {
     const getChatFriends = async () => {
       try {
         const response = await axios.get(
           `/api/conversations/participants/friends`,
-          jwt
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            },
+          }
         );
         setFriends(response.data);
       } catch (err) {

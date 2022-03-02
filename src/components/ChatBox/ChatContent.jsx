@@ -1,10 +1,9 @@
 import FriendTabGroup from "./FriendTabGroup";
 import FriendConversations from "./FriendConversations";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 
 export default function ChatContent(props) {
-  const [socket, setSocket] = useState();
   const [activeFriend, setActiveFriend] = useState(1);
   const { isOpen } = props;
   const [topicSelected, setTopicSelected] = useState(1);
@@ -27,12 +26,10 @@ export default function ChatContent(props) {
   return (
     <div className={toggleChat}>
       <FriendTabGroup
-        socket={socket}
         activeFriend={activeFriend}
         activeFriendClick={activeFriendClick}
       />
       <FriendConversations
-        socket={socket}
         activeFriend={activeFriend}
         isOpen={isOpen}
         topicOnClick={topicOnClick}

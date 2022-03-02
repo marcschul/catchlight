@@ -43,7 +43,7 @@ export default function Nav() {
       try {
         const token = localStorage.getItem("userToken");
         const response = await axios.get(
-          "http://localhost:3001/api/friends/requests",
+          "/api/friends/requests",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setIncomingFriendReqs([...response.data]);

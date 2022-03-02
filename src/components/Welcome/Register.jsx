@@ -31,12 +31,12 @@ export default function Register() {
           setRegisterError(true);
           return console.log('error');
         } 
-      await axios.post('http://localhost:3001/api/users/register', {
+      await axios.post('/api/users/register', {
         email,
         password,
         name
       });
-      const response = await axios.post('http://localhost:3001/api/auth/login', {
+      const response = await axios.post('/api/auth/login', {
         email,
         password
       });
