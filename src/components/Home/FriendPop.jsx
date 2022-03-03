@@ -5,6 +5,8 @@ const axios = require("axios");
 export default function FriendPop(props) {
   const [friends, setFriends] = useState([]);
 
+  const { mediaID } = props;
+
   useEffect(() => {
     async function getMediaFriends() {
       try {
@@ -29,7 +31,7 @@ export default function FriendPop(props) {
           for (const mediaFriend of mediaFriendsInteractions.data) {
             if (friend.friend_id === mediaFriend.id) {
               for (const interactionMedia of mediaFriend.interactions) {
-                if (interactionMedia.media_id === props.mediaID) {
+                if (interactionMedia.media_id === mediaID) {
                   results.push({ profile_picture: friend.profile_picture });
                 }
               }
@@ -46,7 +48,7 @@ export default function FriendPop(props) {
     getMediaFriends().then((res) => {
       setFriends(res.slice(0, 3));
     });
-  }, []);
+  }, [mediaID]);
 
   return (
     <div className="flex min-w-[60px] min-h-[22px] max-w-[60px] max-h-[22px] overflow-visible items-center">

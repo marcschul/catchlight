@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import CardContainer from "./CardContainer";
-import SearchBar from "./SearchBar";
+import React, { useState } from "react";
 import FriendRecommendations from "./FriendRecommendations";
 import WatchList from "./WatchList";
 import Watched from "./Watched";

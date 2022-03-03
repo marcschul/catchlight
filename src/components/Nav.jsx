@@ -18,22 +18,18 @@ export default function Nav() {
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const [showFriendRequestBox, setShowFriendRequestBox] = useState(false);
   const [showNotificationBox, setShowNotificationBox] = useState(false);
-  const [showProfile, setShowProfile] = useState(false);
   const [bellClicked, setBellClicked] = useState(false);
 
   const toggleIcons = (clickedIcon) => {
     if (clickedIcon === "userProfile") {
       setShowFriendRequestBox(false);
       setShowNotificationBox(false);
-      setShowProfile(true);
     } else if (clickedIcon === "friendRequestBox") {
       setShowFriendRequestBox(!showFriendRequestBox);
       setShowNotificationBox(false);
-      setShowProfile(false);
     } else if (clickedIcon === "NotificationBox") {
       setShowFriendRequestBox(false);
       setShowNotificationBox(!showNotificationBox);
-      setShowProfile(false);
       setHasNewNotification(false);
     }
   };

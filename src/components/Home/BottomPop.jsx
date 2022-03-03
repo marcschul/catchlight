@@ -23,8 +23,6 @@ export default function BottomPop(props) {
   }
 
 
-
-
   // Rating button
   const postMediaButtonClick = rating => {
     axios.post('/api/interactions', {rating, mediaID}, jwt)
@@ -60,9 +58,15 @@ export default function BottomPop(props) {
     // isInWatchList
     useEffect(() => {
 
+      const { refresh, setRefresh } = props
+
       async function isInWatchList() {
         try {
-          const isInWatchListData = await axios.get(`/api/isInWatchList/${mediaID}`, jwt);
+          const isInWatchListData = await axios.get(`/api/isInWatchList/${mediaID}`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem('userToken')}`
+            }
+          });
 
           return isInWatchListData.data.length
         } catch (e) {
@@ -75,14 +79,18 @@ export default function BottomPop(props) {
       })
       
       // GET interaction button data
-      axios.get(`/api/media/${mediaID}/interactions/`, jwt)
+      axios.get(`/api/media/${mediaID}/interactions/`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('userToken')}`
+        }
+      })
       .then((res) => {
         setInteractionButton(res.data.rating);
-        props.setRefresh(!props.refresh);
+        setRefresh(!refresh);
       })
       .catch(e => console.log(e))
 
-    }, [watchListButton, interactionButton])
+    }, [watchListButton, interactionButton, props, mediaID])
       
   return(
 

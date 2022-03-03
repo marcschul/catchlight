@@ -5,18 +5,18 @@ import { useEffect, useState } from "react";
 function TopicContainer(props) {
   const { topicSelected, topicOnClick, activeFriend } = props;
   const [topics, setTopics] = useState({});
-  const jwt = {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-    },
-  };
+
   useEffect(() => {
     const getFriendTopics = async () => {
       try {
         const response = await axios.post(
           `/api/conversations/topics`,
           { activeFriend: activeFriend },
-          jwt
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            }
+          }
         );
         setTopics(response.data);
       } catch (err) {

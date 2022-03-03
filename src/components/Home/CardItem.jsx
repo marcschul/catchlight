@@ -10,7 +10,7 @@ export default function CardItem(props) {
   useEffect(() => {
     const path = window.location.pathname.substr(1, 5)
     setPath(path)
-  });
+  }, []);
 
   return (
     <div

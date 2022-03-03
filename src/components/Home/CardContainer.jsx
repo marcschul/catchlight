@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import classNames from "classnames";
 import CardItem from "./CardItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function CardContainer(props) {
-  const { results, showSearch } = props;
+  const { results } = props;
 
   const scrollbar = useRef(null);
 

@@ -82,7 +82,13 @@ export function useApplicationData() {
 
   // --------------------------GET requests and data manipulation----------------------------
   
-  useEffect(() => {    
+  useEffect(() => {   
+    
+    const jwt = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('userToken')}`
+      }
+    };
 
     const singleMedia = axios.get(`/api/media/${mediaID}`, jwt);
     const userInteraction = axios.get(`/api/media/${mediaID}/interactions/`, jwt);

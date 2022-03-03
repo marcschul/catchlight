@@ -6,11 +6,7 @@ export default function MessageContainer(props) {
   const [currentUserId, setCurrentUserId] = useState("");
   const [messages, setMessages] = useState([]);
   const { activeFriend, topicSelected } = props;
-  const jwt = {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-    },
-  };
+
 
   useEffect(() => {
     const getMessages = async () => {
@@ -18,7 +14,11 @@ export default function MessageContainer(props) {
         const response = await axios.post(
           `/api/conversations/messages`,
           { activeFriend: activeFriend, topicSelected: topicSelected },
-          jwt
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            }
+          }
         );
         setMessages(response.data);
       } catch (err) {
@@ -39,7 +39,12 @@ export default function MessageContainer(props) {
   useEffect(() => {
     const getUserId = async () => {
       try {
-        const response = await axios.get(`/api/users/user/id`, jwt);
+        const response = await axios.get(`/api/users/user/id`, 
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+          }
+        });
         setCurrentUserId(response.data[0]);
       } catch (err) {
         console.log(err);
