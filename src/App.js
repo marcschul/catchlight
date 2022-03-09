@@ -1,10 +1,21 @@
 import Nav from './components/Nav';
 import ChatBox from './components/ChatBox/ChatBox'
-import { Outlet } from "react-router-dom";
-import React from 'react';
+import { Outlet, useNavigate } from "react-router-dom";
+import React, { useEffect } from 'react';
 import './index.css';
 
 function App() {
+
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem('userToken');
+
+    if (!user) {
+      navigate("/login", { replace: true });
+    }
+  }, [])
+  
 
   return (
     <React.Fragment>
