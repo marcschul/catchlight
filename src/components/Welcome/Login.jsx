@@ -78,6 +78,10 @@ export default function Login() {
             </Link>
           </div>
         </div>
+
+        <div className="flex justify-center bg-black">
+          <p className="text-2xl text-pagetxt my-3"><b>DEV MODE</b> => <b>Email: </b>test@email.com || <b>Password: </b>password</p>
+        </div>
       </div>
     </main>
   );
