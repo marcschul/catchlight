@@ -14,7 +14,7 @@ function App() {
     if (!user) {
       navigate("/login", { replace: true });
     }
-  }, [])
+  }, [navigate])
   
 
   return (
